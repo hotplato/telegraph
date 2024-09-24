@@ -12,7 +12,7 @@
 | `TG_BOT_TOKEN` | 通过 @BotFather 获取的 Telegram 机器人令牌。                        |
 | `TG_CHAT_ID`   | 填账号的ID机器人就发给你，填频道或者群组的，机器人就发到频道或者群组，最终的文件链接是一样的。 |
 
-访问```https://api.telegram.org/bot<YourBotToken>/getUpdates```可以获取用户ID或者频道ID。```<YourBotToken>```替换为你的```TG_BOT_TOKEN```
+使用机器人@VersaToolsBot获取ID，将你和机器人或者频道的消息转发给机器人即可！
 
 在绑定数据库的时候使用
 | 变量名    | 说明                                      |
@@ -28,23 +28,22 @@
 ### 数据库初始化指令
 ```
 CREATE TABLE media (
-    file_path TEXT PRIMARY KEY,
-    timestamp INTEGER NOT NULL,
+    fileId TEXT PRIMARY KEY,
     url TEXT NOT NULL
 );
 ```
+## 填写示例：
+![image](https://kycloud3.koyoo.cn/2024092389dc0202409232021524424.png) 
 
-# 功能
+## 功能
 
 - 支持访客验证。
-
 - 支持多文件上传。
 - 支持查看历史记录。
+- 支持图片视频文件上传。
 - 支持批量管理后台文件。
 - 支持在图床界面粘贴上传。
-- 支持上传≤20MB的图像文件。
 - 支持选择图片后会自动上传。
-- 支持JPEG、JPG、PNG、GIF格式。
 - 在写入数据库之前，检查数据是否已存在，避免重复。
 - 支持在管理界面显示图片上传时间，并按上传时间排序。
 - 支持修改后台路径为 /admin，可在代码的第二行进行调整。
