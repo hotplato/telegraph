@@ -234,10 +234,10 @@ async function handleRootRequest(request, USERNAME, PASSWORD, enableAuth) {
               const isAcceptedType = acceptedTypes.some(type => {
                 return type.includes('*') ? file.type.startsWith(type.split('/')[0]) : file.type === type;
               });
-              if (file.type === 'image/gif' || !isAcceptedType) {
-                toastr.error('仅支持除 GIF 外的图片或视频格式的文件。');
-                return;
-              }
+              // if (file.type === 'image/gif' || !isAcceptedType) {
+              //   toastr.error('仅支持除 GIF 外的图片或视频格式的文件。');
+              //   return;
+              // }
               if (file.type.startsWith('image/')) {
                 const image = new Image();
                 const reader = new FileReader();
